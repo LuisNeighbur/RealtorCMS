@@ -56,7 +56,6 @@ function GetTab(name){
 	});
 }
 function openLayer(id){
-	console.warn("A")
 	Loading();
 	var imagenes = '';
 	var htmll = html;
