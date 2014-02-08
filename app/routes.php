@@ -10,7 +10,11 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
-Route::get('/test','HomeController@showTest');
+
+Route::get('/test', function(){
+	$r = Place::getWithImages(1);
+	return Response::json($r);
+});
 Route::group(array('domain' => 'franco.encom.uy'), function(){
 	Route::group(array('before' =>'noGuest'), function(){
 		Route::get('/logout', function(){

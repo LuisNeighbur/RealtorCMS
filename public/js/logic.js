@@ -56,6 +56,7 @@ function GetTab(name){
 	});
 }
 function openLayer(id){
+	console.warn("A")
 	Loading();
 	var imagenes = '';
 	var htmll = html;
@@ -66,8 +67,8 @@ function openLayer(id){
 		Imgs = d.data.imgs;
 
 		var idioma = (location.href.search('/es')>=0)? 1: 0;
-		var dataDesc = (idioma==0)? d.data.descripcion: d.data.descripcionEs;
-		var dataSuperficie =(idioma==0)? d.data.dimensionesFeet: d.data.dimensionesMeter;
+		var dataDesc = (idioma==0)? d.data.descripcion : d.data.descripcionEs;
+		var dataSuperficie =(idioma==0)? d.data.dimensionesFeet : d.data.dimensionesMeter;
 
 		var i,pag;
 		var pagHtml='';
@@ -87,7 +88,7 @@ function openLayer(id){
 
 			pagHtml = pagHtml + '</ul>';
 
-			htmll = htmll.replace('SCRIPT!','<script src="js/popup.pag.js"></script>');
+			htmll = htmll.replace('SCRIPT!','<script src="/js/popup.pag.js"></script>');
 
 		}else{
 			//en el caso q son menos o igual q 4
@@ -140,23 +141,13 @@ var html='<div class="front">'+
 			'</div>'+
 		'</div>'+
 	'</div>'+
-	'<script src="js/popup.js"></script>'+
-	'<script src="js/popup.img.js"></script>'+
+	'<script src="/js/popup.js"></script>'+
+	'<script src="/js/popup.img.js"></script>'+
 	'SCRIPT!';
 var enter = '<br>';
 var coma = ' , ';
 
 $(document).on("ready",function(){
-//WorkFor();
-
-//Test
-$('#buscar').on('keypress', function(e){
-	if(e.which==13){
-		window.location='/search/' + $("#buscar").val();
-	}
-});
-//End Test
-
 $( window ).resize(function() {
 		//WorkFor();
 		/*if ($(window).width() <= 768){

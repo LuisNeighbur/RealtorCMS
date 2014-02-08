@@ -16,14 +16,13 @@ class HomeController extends BaseController {
 	*/
 
 	protected $layout = 'layouts.master';
-	public function showWelcome()
-	{
-		$articles = Place::all();
-		$this->layout->content = View::make('layouts.article')->with(array('articles'=>$articles));
+	public function showWelcome(){
+		$articles = Place::getAll();
+		$this->layout->content = View::make('layouts.article')->with(array('articles' => $articles));
 	}
 	public function showProperty($title,$id){
 		$articles = Place::getWithImages($id);
-		$this->layout->content = View::make('layouts.permlink')->with(array('articles'=>$articles));
+		$this->layout->content = View::make('layouts.permlink')->with(array('articles' => $articles));
 	}
 	public function showKnowMe(){
 		return View::make('knowme');
