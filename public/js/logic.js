@@ -33,10 +33,6 @@ var lang = [
 	"harLink" : "HAR (Asociación de Agentes Inmobiliarios de Houston) link"	
 	}
 ];
-
-//function WorkFor(){
-//	$('#workfor').css({'left':(($(window).width() - $('#workfor').width())/2)+'px'});
-//}
 function Loading(){
 	$('body').prepend('<div class="spinner"></div>');
 	//$('.spinner').css({ left: (($(window).width() - $('#workfor').width())/2) ,top: ($(window).height() - $('.spinner').height())/2});
@@ -148,12 +144,7 @@ var coma = ' , ';
 
 $(document).on("ready",function(){
 $( window ).resize(function() {
-		//WorkFor();
-		/*if ($(window).width() <= 768){
-			$('.pagination').css('display','none');
-		}else{
-			$('.pagination').css('display','block');
-		}*/
+
 		if ($('#gmap').length > 0){ 
 			if($(window).width() < 676){
 				$('#gmap').css('display','none');
@@ -204,12 +195,15 @@ $('#center').on("click",function(){
 var hash = window.location.hash;
 if (hash != ''){
 
-hash = hash.substring( hash.indexOf('#')+1 );
-hash = hash.substring(hash.indexOf('/') + 1);
-var action = hash.substring(0,hash.indexOf('/'));
-if(action=='description'){ 	openLayer( hash.substring(hash.indexOf('/')+1));	}
-if((action=='about') || (action=='buy') || (action=='sell') || (action=='support') || (action=='adv') || (action=='contact') || (action=='center')){	$( "#" + action ).click(); }
-
+	hash = hash.substring( hash.indexOf('#')+1 );
+	hash = hash.substring(hash.indexOf('/') + 1);
+	var action = hash.substring(0,hash.indexOf('/'));
+	if(action=='description'){
+ 		openLayer( hash.substring(hash.indexOf('/')+1));	
+ 	}
+	if((action=='about') || (action=='buy') || (action=='sell') || (action=='support') || (action=='adv') || (action=='contact') || (action=='center')){	
+		$( "#" + action ).click(); 
+	}
 }
 
 });
