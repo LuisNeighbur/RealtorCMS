@@ -1,0 +1,28 @@
+<?php
+return array(
+	'home' => 'Inicio',
+	'about' => 'Acerca de Franco',
+	'benefits' => 'Sus beneficios',
+	'buyers' => 'Compradores',
+	'sellers' => 'Vendedores',
+	'resource_center' => 'Centro de Recursos',
+	'reolocating' => 'Trasladarse a Houston',
+	'support' => 'Soporte',
+	'advantages' => 'Ventajas',
+	'view_more' => 'Ver Mas',
+	'sold' => 'Vendida',
+	'info' => 'Informacion',
+	'description' => 'Descripcion',
+	'price' => 'Precio',
+	'dimension' => 'Superficie (m2)',
+	'year' => 'Año Construccion',
+	'bed' => 'Dormitorios',
+	'bath' => 'Baños',
+	'garage' => 'Garaje',
+	'pool' => 'Piscina',
+	'district' => 'Distrito Escolar',
+	'elementary' => 'Escuela Primaria',
+	'middle' => 'Escuela Secundaria',
+	'high' => 'Escuela Terciaria (Bachillerato)',
+	'harLink' => 'HAR (Asociación de Agentes Inmobiliarios de Houston) link'
+);

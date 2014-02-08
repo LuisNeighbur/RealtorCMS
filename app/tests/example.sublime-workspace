@@ -1,0 +1,304 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"a",
+				"articles"
+			],
+			[
+				"text",
+				"textarea"
+			],
+			[
+				"text-",
+				"text-decoration"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "/F/Python2.7/tutorial/tutorial/spiders/dmoz_spider.py",
+			"settings":
+			{
+				"buffer_size": 457,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/F/Python2.7/tutorial/tutorial/items.py",
+			"settings":
+			{
+				"buffer_size": 253,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/F/webserver/htdocs/franco/public/css/bootstrap.skin.min.css",
+		"/F/webserver/htdocs/franco/public/js/popup.js",
+		"/F/webserver/htdocs/franco/public/index.php",
+		"/F/webserver/htdocs/encom/app/views/layouts/posts.blade.php",
+		"/F/webserver/htdocs/encom/app/controllers/Gallery.php",
+		"/F/webserver/htdocs/franco/app/models/Article.php",
+		"/F/webserver/htdocs/franco/app/models/Imagenes.php",
+		"/F/webserver/apache/conf/extra/httpd-vhosts.conf",
+		"/C/Users/TAVO/AppData/Roaming/Sublime Text 2/Packages/User/Preferences.sublime-settings",
+		"/F/webserver/htdocs/encom/app/controllers/HomeController.php",
+		"/F/webserver/htdocs/franco/app/controllers/HomeController.php",
+		"/F/webserver/htdocs/franco/app/config/database.php",
+		"/F/webserver/htdocs/franco/app/database/migrations/2013_12_30_213500_users.php",
+		"/F/webserver/htdocs/franco/app/database/migrations/2013_12_30_223950_lugares.php",
+		"/F/webserver/htdocs/franco/app/models/User.php",
+		"/F/webserver/htdocs/franco/app/routes.php",
+		"/F/webserver/htdocs/franco/public/css/style.css",
+		"/F/webserver/htdocs/franco/app/views/layouts/article.blade.php",
+		"/F/webserver/tomcat/conf/tomcat-users.xml",
+		"/F/webserver/htdocs/franco/app/views/layouts/master.blade.php",
+		"/F/webserver/htdocs/encom/app/views/layouts/post.blade.php",
+		"/f/webserver/FileZillaFTP/FileZilla",
+		"/C/Windows/System32/drivers/etc/hosts",
+		"/F/webserver/MercuryMail/MERCURY.INI",
+		"/F/webserver/nginx/conf/nginx.conf",
+		"/f/webserver/Server.xml",
+		"/C/Users/TAVO/AppData/Roaming/Sublime Text 2/Packages/Default/Preferences.sublime-settings",
+		"/F/webserver/htdocs/encom/app/views/width.php",
+		"/F/webserver/htdocs/encom/app/routes.php",
+		"/F/webserver/htdocs/encom/app/views/layouts/master.blade.php",
+		"/F/webserver/htdocs/encom/posts.bak.html",
+		"/F/webserver/htdocs/encom/app/database/migrations/2013_12_26_161435_add_votes_to_user_table.php",
+		"/F/webserver/htdocs/encom/app/database/migrations/2013_12_26_150046_Users.php",
+		"/F/webserver/htdocs/encom/public/css/skel-noscript.css",
+		"/F/webserver/MercuryMail/MAIL/luis_n/FOL068D6.PMM",
+		"/F/webserver/MercuryMail/MAIL/luis_n/PASSWD.PM",
+		"/F/webserver/MercuryMail/MAIL/luis_n/FOL04D0A.PMI",
+		"/F/webserver/MercuryMail/MAIL/luis_n/D374FE24.CNM",
+		"/F/webserver/htdocs/encom/public/js/init.js",
+		"/F/webserver/nginx/logs/access.log",
+		"/F/webserver/htdocs/encom/public/css/style-mobile.css",
+		"/F/webserver/htdocs/encom/public/css/style-desktop.css",
+		"/F/webserver/htdocs/encom/public/js/skel-panels.min.js",
+		"/F/webserver/htdocs/encom/public/css/style-narrow.css",
+		"/F/webserver/htdocs/encom/public/css/style-narrower.css",
+		"/F/webserver/htdocs/encom/public/css/style-wide.css",
+		"/F/webserver/htdocs/encom/app/views/index.php",
+		"/F/nodejs/backchat.js",
+		"/F/webserver/phpMyAdmin/config.inc.php",
+		"/F/webserver/htdocs/js/init.js",
+		"/F/webserver/htdocs/index.html",
+		"/F/webserver/apache/conf/extra/httpd-ssl.conf",
+		"/F/webserver/apache/conf/extra/httpd-default.conf",
+		"/C/Users/TAVO/Downloads/nginx-1.4.4/nginx-1.4.4/logs/error.log",
+		"/F/webserver/htdocs/encom/app/views/post.php",
+		"/F/webserver/apache/conf/httpd.conf",
+		"/F/webserver/MercuryMail/auth.pwd",
+		"/F/webserver/apps/wordpress/htdocs/wp-content/plugins/wp-mail-smtp/wp_mail_smtp.php",
+		"/C/tet",
+		"/F/webserver/MercuryMail/cert/server - copia.crt",
+		"/F/webserver/nginx/logs/error.log",
+		"/C/Program Files/DirectUpdate v4/dns/cdmon.com.dud",
+		"/F/nodejs/echat.html",
+		"/F/webserver/MercuryMail/cert/server.crt",
+		"/F/webserver/apps/wordpress/htdocs/wp-mail.php",
+		"/C/Users/TAVO/Downloads/nginx-1.4.4/nginx-1.4.4/conf/nginx.conf",
+		"/F/webserver/htdocs/js/html5shiv.js",
+		"/F/webserver/htdocs/index.php",
+		"/F/dincdmon.bat",
+		"/F/index_chat.html",
+		"/F/backpress.js",
+		"/E/ZAFRA2013.xlsm"
+	],
+	"find":
+	{
+		"height": 34.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"auto",
+			"decorablog",
+			");\n",
+			"();\n",
+			"posts",
+			"):\n",
+			"class",
+			"');",
+			"<!",
+			"nginx.exe",
+			"httpd.exe",
+			" \":",
+			"pointer",
+			"name",
+			";\n"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "/F/Python2.7/tutorial/tutorial/spiders/dmoz_spider.py",
+					"settings":
+					{
+						"buffer_size": 457,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								101,
+								101
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/F/Python2.7/tutorial/tutorial/items.py",
+					"settings":
+					{
+						"buffer_size": 253,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 30.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+			[
+				"",
+				"/F/webserver/htdocs/franco/franco.sublime-project"
+			]
+		],
+		"width": 380.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true
+}

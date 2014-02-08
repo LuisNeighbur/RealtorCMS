@@ -1,0 +1,9 @@
+/bootstrap/compiled.php
+/vendor
+composer.phar
+composer.lock
+.DS_Store
+Thumbs.db
+/vendor
+/franco.sublime-project
+/frnaco.sublime-workspace
