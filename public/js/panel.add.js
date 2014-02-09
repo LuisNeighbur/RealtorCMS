@@ -12,15 +12,14 @@ $('#har_url').focusout(function(){
 	}
 });
 $('#getData').on('click', function(){
-	var data = $('#data').addClass('hide')
-	var msjs = $('#msjs').empty().addClass('loading')
-	$('.ajax-upload-dragdrop').remove()
 	var url = $("#har_url")
 	if ( (url.val()=='') || (!(ValidURL(url.val()))) ){
 		url.focus();
 		return false;
 	}
-	
+	var data = $('#data').addClass('hide')
+	var msjs = $('#msjs').empty().addClass('loading')
+	$('.ajax-upload-dragdrop').remove()
 	$.ajax({
 		url: '/admin/collector',
 		type: 'post',
@@ -99,7 +98,6 @@ $('#getData').on('click', function(){
 			url.focus()
 		}
 		//Para ver el json que retorno desde el colector de datos
-		console.log(a);
 		//Si la peticion fracasa...
 	}).fail(function(){
 		msjs.removeClass('loading').append('<div id="msj" class="alert alert-danger alert-dismissable">'+

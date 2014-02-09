@@ -1,35 +1,28 @@
 <?php
 class Search extends Eloquent{
 	protected $table='places';
-	public function Search($term){
-		if ((strrpos($terms,'dormitory') >= 0) || (strrpos($terms,'bedroom') >= 0) || (strrpos($terms,'bedrooms') >= 0) || (strrpos($terms,'dormitories') >= 0)){
-			$buscar = str_replace('bedrooms', '', $terms);
-			$buscar = str_replace('bedroom', '', $buscar);
-			$buscar = str_replace('dormitory', '', $buscar);
-			$buscar = str_replace('dormitories', '', $buscar);
-			$buscar = str_replace('  ', ' ', $buscar);
-			$buscar = trim($buscar);
+	static public function SearchProperty($term){
+		if(preg_match('/([0-9]+)((\s)?|(\s)+)(cuarto(s)|dormitor(y|ies|io(s)?)|(bed(room|chamber)?)s?)/i', $term, $matches)){
 			//campo dormitorios LIKE %$buscar%
-			$arr = self::where('dormitorios', 'like', '%'+$buscar+'%')->toArray();
-			return $arr;
+			$arr = self::where('dormitorios', 'like', '%'.$matches[1].'%');
+			return $arr->toArray();
 
-		}else if ((strrpos($terms,'bath') >= 0) || (strrpos($terms,'bathroom') >= 0) || (strrpos($terms,'bathrooms') >= 0) || (strrpos($terms,'toilet') >= 0) || (strrpos($terms,'toilets') >= 0)){
-			$buscar = str_replace('bath', '', $terms);
-			$buscar = str_replace('bathroom', '', $buscar);
-			$buscar = str_replace('bathrooms', '', $buscar);
-			$buscar = str_replace('toilet', '', $buscar);
-			$buscar = str_replace('toilets', '', $buscar);
-			$buscar = str_replace('  ', ' ', $buscar);
-			$buscar = trim($buscar);
+		}else if(preg_match("/(([0-9])+)((\s)?|(\s)+)((half)?)((\s)?|(\s)+)(baño|toilet|bath(room)?)s?/i", $term, $matches)){
 			//campo banios LIKE %$buscar%
-			$arr = self::where('banios', 'like', '%'+$buscar+'%')->toArray();
-			return $arr;
-		}else if ((strrpos($terms,'pool') >= 0) || (strrpos($terms,'swimming pool') >= 0) || (strrpos($terms,'swimmingpool') >= 0)){
-			//buscar en campo piscina = "Yes"
-			$arr = self::where('piscina', 'like', '%Yes%')->toArray();
-			return $arr;
-		}else {
+			$arr = self::where('banios', 'like', '%'.$matches[1].'%');
+			return $arr->toArray();
 
+		}else if(preg_match("/((swimming((\s)?|(\s)+))?((pool)(s)?)|piscina(s)?|pileta(s)?)/i", $term, $matches)){
+			//buscar en campo piscina = "Yes"
+			$arr = self::where('piscina', 'like', '%Yes%');
+			return $arr->toArray();
+
+		}else {
+			$arr = self::where('direccion', 'like', '%'.$term.'%')
+                    ->orWhere('area', 'like', '%'.$term.'%')
+                    ->orWhere('descripcion', 'like', '%'.$term.'%')
+                    ->orWhere('descripcionEs', 'like', '%'.$term.'%');
+			return $arr->toArray();
 		}
 	}
 }

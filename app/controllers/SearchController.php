@@ -1,13 +1,13 @@
 <?php
 class SearchController extends BaseController{
-	protected $layout = 'layouts.search';
+	protected $layout = 'layouts.master';//'layouts.search';
 	
 	public function search($terms){
 		
 		$terms = urldecode($terms);
 		
-		$articles = Search::Search($terms);
+		$articles = Search::SearchProperty($terms);
 
-		$this->layout->content = View::make('layouts.articleSearch')->with(array('articles'=>$articles->toArray()));
+		$this->layout->content = View::make('layouts.search')->with(array('articles'=>$articles->toArray()));//articleSearch
 	}
 }

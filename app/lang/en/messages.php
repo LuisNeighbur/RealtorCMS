@@ -1,14 +1,16 @@
 <?php
 return array(
+	'phrase' => 'Please contact me at',
 	'home' => 'Home',
 	'about' => 'About Franco',
 	'benefits' => 'Your Benefits',
 	'buyers' => 'Buyers',
 	'sellers' => 'Sellers',
 	'resource_center' => 'Resource Center',
-	'reolocating' => 'Relocating Houston',
+	'relocating' => 'Relocating Houston',
 	'support' => 'Support',
 	'advantages' => 'Advantages',
+	'contact' => 'Contact',
 	'view_more' => 'View More',
 	'sold' => 'SOLD',
 	'info' => 'Information',

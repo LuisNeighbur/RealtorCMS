@@ -55,23 +55,23 @@
 				{{ Lang::get('messages.benefits') }}<span class="caret"></span>
 				</a>
 				<ul class="dropdown-menu">
-					<li id='buy'><a href="#/buy/">Buyers</a></li>
+					<li id='buy'><a href="#/buy/">{{ Lang::get('messages.buyers') }}</a></li>
 					<li class="divider"></li>
-					<li id='sell'><a href="#/sell/">Sellers</a></li>
+					<li id='sell'><a href="#/sell/">{{ Lang::get('messages.sellers') }}</a></li>
 				</ul>
           </li>
-          <li id='center'><a href="#/center/">Resource Center</a></li>
+          <li id='center'><a href="#/center/">{{ Lang::get('messages.resource_center') }}</a></li>
 		  <li class="dropdown">
 				<a class="dropdown-toggle" data-toggle="dropdown" href="#" title="">
-				Relocating Houston <span class="caret"></span>
+				{{ Lang::get('messages.relocating') }} <span class="caret"></span>
 				</a>
 				<ul class="dropdown-menu">
-					<li id='support'><a href="#/support/">Support</a></li>
+					<li id='support'><a href="#/support/">{{ Lang::get('messages.support') }}</a></li>
 					<li class="divider"></li>
-					<li id='adv'><a href="#/adv/" title="Opportunities, Education &amp; Entertainment">Advantages</a></li>
+					<li id='adv'><a href="#/adv/" title="Opportunities, Education &amp; Entertainment">{{ Lang::get('messages.advantages') }}</a></li>
 				</ul>
           </li>
-          <li id='contact'><a href="#/contact/">Contact</a></li>
+          <li id='contact'><a href="#/contact/">{{ Lang::get('messages.contact') }}</a></li>
         </ul>
       </div>
 
@@ -79,7 +79,7 @@
 				
 		<blockquote style="background-color: rgba(0,0,0,0.45); clear: both; overflow: auto;">
 			<img class"img-top img-responsive" src="/images/top.png"/>
-			<p>"Please contact me at (281) 702-2985."</p>
+			<p>"{{ Lang::get('messages.phrase')}} (281) 702-2985."</p>
 			<small><cite title="Franco R. Thoma"><span class="glyphicon glyphicon-user"></span> Franco R. Thoma</cite></small>
 		</blockquote>
 		<div class="input-group input-group-sm">

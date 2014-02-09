@@ -92,9 +92,11 @@ body {
 }
 @media (min-width:768px){
   .img_panel_thumbnail{
-    /*min-width: 128px !important;*/
+
     max-width: 138px !important;
+    min-width: 138px !important;
     min-height: 138px !important;
+    max-height: 138px !important;
   }
   .img_panel_box{
     max-width: 148px !important;
@@ -102,9 +104,10 @@ body {
 }
 @media (max-width:768px){
   .img_panel_thumbnail{
-    /*min-width: 128px !important;*/
     max-width: 64px !important;
+    min-width: 64px !important;
     min-height: 64px !important;
+    max-height: 64px !important;
   }
   .img_panel_box{
     max-width: 74px !important;

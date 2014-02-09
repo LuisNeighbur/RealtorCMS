@@ -10,7 +10,7 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
-
+Route::get('/search/{terms}' , 'SearchController@search');
 Route::get('/test', function(){
 	$r = Place::getWithImages(1);
 	return Response::json($r);
@@ -47,5 +47,5 @@ Route::group(array('domain' => 'franco.encom.uy'), function(){
 	Route::get('/{title}/{id}','HomeController@showProperty')->where(array('id' => '[0-9]+'));
 	Route::get('/login', array('before' => 'guest','uses' =>'PanelController@login'));
 	Route::post('/login', array('before' => 'csrf','uses' =>'PanelController@loginProcess'));
-	
+	Route::get('/search/{terms}' , 'SearchController@search');
 });

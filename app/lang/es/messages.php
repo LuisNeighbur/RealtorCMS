@@ -1,14 +1,16 @@
 <?php
 return array(
+	'phrase' => 'Porfavor, contacteme al',
 	'home' => 'Inicio',
 	'about' => 'Acerca de Franco',
 	'benefits' => 'Sus beneficios',
 	'buyers' => 'Compradores',
 	'sellers' => 'Vendedores',
 	'resource_center' => 'Centro de Recursos',
-	'reolocating' => 'Trasladarse a Houston',
+	'relocating' => 'Trasladarse a Houston',
 	'support' => 'Soporte',
 	'advantages' => 'Ventajas',
+	'contact' => 'Contactame',
 	'view_more' => 'Ver Mas',
 	'sold' => 'Vendida',
 	'info' => 'Informacion',

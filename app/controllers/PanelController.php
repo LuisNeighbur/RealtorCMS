@@ -80,13 +80,12 @@ class PanelController extends BaseController {
 	}
 	public function delete(){
 		$place = Place::find(Input::get('id'));
-		$e = $place->delete();
 		if(!$place)
 			return Response::json(array('status_code' => 404));
-		//code update o noseq softDelete
-		return Response::json(array('status_code' => 200,$e));
+		$place->delete();
+		return Response::json(array('status_code' => 200));
 	}
 	public function patch(){
-
+		
 	}
 }
