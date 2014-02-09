@@ -6,7 +6,11 @@ class SearchController extends BaseController{
 		
 		$terms = urldecode($terms);
 		
+		if($terms != ''){
 		$articles = Search::SearchProperty($terms);
 		$this->layout->content = View::make('layouts.search')->with('articles', $articles);//articleSearch
+		}else{
+			return Redirect::to('/');
+		}
 	}
 }
