@@ -5,4 +5,5 @@ composer.lock
 .DS_Store
 Thumbs.db
 /vendor/*
-franco.sublime*
+franco.sublime-project
+franco.sublime-workspace
