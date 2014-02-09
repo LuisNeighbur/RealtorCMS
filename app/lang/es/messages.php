@@ -1,6 +1,6 @@
 <?php
 return array(
-	'phrase' => 'Porfavor, contacteme al',
+	'phrase' => 'Por favor, contacteme al',
 	'home' => 'Inicio',
 	'about' => 'Acerca de Franco',
 	'benefits' => 'Sus beneficios',

@@ -37,7 +37,7 @@
 		<h1><span class="glyphicon glyphicon-home"></span> TEXAS USA AGENT <small>- Franco R. Thoma</small>
 	    
 		<div class="btn-group pull-right">
-		  <a href="/" type="button" class="btn btn-primary">English</a>
+		  <a href="/en" type="button" class="btn btn-primary">English</a>
 		  <a type="button" class="btn btn-default disabled"><span class="glyphicon glyphicon-flag"></span></a>
 		  <a href="/es/" type="button" class="btn btn-primary">Espa&ntilde;ol</a>
 		</div>

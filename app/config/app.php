@@ -53,8 +53,11 @@ return array(
 	|
 	*/
 
-	'locale' => 'es',
-
+	'locale' => 'en',
+	'locales' => array(
+        'en', // English
+        'es', // Spanish
+    ),
 	/*
 	|--------------------------------------------------------------------------
 	| Encryption Key

@@ -16,6 +16,14 @@ Route::get('/test', function(){
 	return Response::json($r);
 });
 Route::group(array('domain' => 'franco.encom.uy'), function(){
+	Route::get('/es', function(){
+		Session::put('locale', 'es');
+		return Redirect::to('/');
+	});
+	Route::get('/en', function(){
+		Session::put('locale', 'en');
+		return Redirect::to('/');
+	});
 	Route::group(array('before' =>'noGuest'), function(){
 		Route::get('/logout', function(){
 			Auth::logout();

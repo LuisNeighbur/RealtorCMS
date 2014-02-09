@@ -7,7 +7,6 @@ class SearchController extends BaseController{
 		$terms = urldecode($terms);
 		
 		$articles = Search::SearchProperty($terms);
-
-		$this->layout->content = View::make('layouts.search')->with(array('articles'=>$articles->toArray()));//articleSearch
+		$this->layout->content = View::make('layouts.search')->with('articles', $articles);//articleSearch
 	}
 }
