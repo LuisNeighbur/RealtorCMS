@@ -25,11 +25,17 @@
 				<h3 class="panel-title">{{Lang::get('messages.info')}}<span class="badge pull-right" style="font-family:Arial,sans-serif;">Id: {{$articles['data']['id']}}</span></h3>
 			</div>
 			<div class="panel-body">
-				<b>{{Lang::get('messages.description')}}: </b><?php if (Lang::get('messages.sold')=='SOLD'){ echo $articles['data']['descripcion']; }else{ echo $articles['data']['descripcionEs']; } ?><br><br>
+				<b>{{Lang::get('messages.description')}}: </b>
+				@if(App::getLocale() == 'en')
+  					{{ $articles['data']['descripcion_short'] }}
+  				@else
+  					{{ $articles['data']['descripcionEs_short'] }}
+  				@endif
+				<br><br>
 				<b>{{Lang::get('messages.price')}}:</b>{{ $articles['data']['precio'] }} , <b>{{Lang::get('messages.dimension')}}:</b><?php if (Lang::get('messages.sold')=='SOLD'){ echo $articles['data']['dimensionesFeet']; }else{ echo $articles['data']['dimensionesMeter']; } ?> , <b>{{Lang::get('messages.year')}}:</b>{{ $articles['data']['contruida_anio'] }}<br>
 				<b>{{Lang::get('messages.bed')}}:</b>{{ $articles['data']['dormitorios'] }} , <b>{{Lang::get('messages.bath')}}:</b>{{ $articles['data']['banios'] }} , <b>{{Lang::get('messages.garage')}}:</b>{{ $articles['data']['garage'] }} , <b>{{Lang::get('messages.pool')}}:</b>{{ $articles['data']['piscina'] }}<br>
 				<b>{{Lang::get('messages.district')}}:</b>{{ $articles['data']['distritoEscolar'] }} , <b>{{Lang::get('messages.elementary')}}:</b>{{ $articles['data']['escuelaKinder'] }} , <b>{{Lang::get('messages.middle')}}:</b>{{ $articles['data']['escuelaPrimaria'] }} , <b>{{Lang::get('messages.high')}}:</b>{{ $articles['data']['escuelaSecundaria'] }}<br>
-				<b>{{Lang::get('messages.harLink')}}:</b>{{ $articles['data']['url_referencia'] }}<br><br>
+				<b>{{Lang::get('messages.harLink')}}:</b> {{ HTML::link($articles['data']['url_referencia']) }}<br><br>
 				<div class="btn-group btn-group-sm">
 					<a  target="_blank" href="http://www.facebook.com/sharer/sharer.php?s=100&p[url]={{ $articles['data']['permLink'] }}/{{ $articles['data']['id'] }}&p[images][0]={{ $articles['data']['front_image'] }}&p[title]=<?php echo urlencode($articles['data']['direccion']);?>&p[summary]=<?php echo urlencode($articles['data']['descripcion']);?>" class="btn facebook effect">Share&nbsp;&nbsp;[ f ]</a>
   					<a target="_blank" href="https://twitter.com/intent/tweet?text=House FOR SALE - {{ $articles['data']['direccion'] }}&url={{ $articles['data']['permLink'] }}/{{ $articles['data']['id'] }}" class="btn twitter effect">[ t ]&nbsp;&nbsp;Tweet</a>
