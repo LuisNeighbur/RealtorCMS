@@ -22,22 +22,30 @@ class Place extends Eloquent {
 		$this->deleted_at = date('Y-m-d H:i:s');
 		$this->save();
 	}
+	static public function getImages($pid){
+		$images = Place::find($pid)->images;
+		if($images)
+			return $images;
+		return false;
+	}
+	static public function getProperty($pid){
+		$property = Place::find($pid);
+		if($property)
+			return $property;
+		return false;
+	}
 	static public function getWithImages($id){
 		$return = array('status_code' => 200);
-		try{
-			$n1 = Place::find($id);
-			$n2 = Place::find($id)->images;
-			if($n1 && $n2){
-				$return['data'] = $n1->toArray();
-				$return['data']['descripcion_short'] = Str::words($n1['descripcion'], 30, '...');
-				$return['data']['descripcionEs_short'] = Str::words($n1['descripcionEs'], 30, '...');
-				$return['data']['imgs'] = $n2->toArray();
-			}else{
-				$return['status_code'] = 404;
-			}	
-		}catch(ErrorException  $e){
+		$n1 = Place::getProperty($id);
+		$n2 = Place::getImages($id);
+		if($n1 && $n2){
+			$return['data'] = $n1->toArray();
+			$return['data']['descripcion_short'] = Str::words($n1['descripcion'], 30, '...');
+			$return['data']['descripcionEs_short'] = Str::words($n1['descripcionEs'], 30, '...');
+			$return['data']['imgs'] = $n2->toArray();
+		}else{
 			$return['status_code'] = 404;
-		}
+		}	
 		return $return;
 	}
 }
