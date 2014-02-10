@@ -108,6 +108,7 @@ function openLayer(id){
   					                  '<a target="_blank" href="https://twitter.com/intent/tweet?text=House FOR SALE - '+d.data.direccion + '(' + d.data.area + ')&url='+ d.data.permLink +'/'+ d.data.id+'"class="btn twitter effect">[ t ]&nbsp;&nbsp;Tweet</a>'+
             						  '</div>');
 		$('body').prepend(htmll);
+		window.history.pushState(null,'', d.data.permLink);
 		$('.container').css('display','none');
 		$('.front').slideToggle("slow", function(){ $('.spinner').remove();	});
 	});
