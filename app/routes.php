@@ -10,10 +10,8 @@
 | and give it the Closure to execute when that URI is requested.
 |
 */
-Route::get('/search/{terms}' , 'SearchController@search');
-Route::get('/search', function(){
-    return Redirect::to('/');
-});
+
+
 Route::get('/test', function(){
 	$r = Place::getWithImages(1);
 	return Response::json($r);
@@ -32,6 +30,7 @@ Route::group(array('before' =>'noGuest'), function(){
 		Auth::logout();
 		return Redirect::to('/');
 	});
+	//Temporal
 	Route::get('/admin', function(){
 		return Redirect::to('/admin/add');
 	});
@@ -51,7 +50,7 @@ Route::group(array('before' =>'noGuest'), function(){
 });
 Route::get('/','HomeController@showWelcome');
 
-Route::get('/getData/{id}.json', array('before' => 'sanitize', 'uses' => 'HomeController@showJson'))
+Route::get('/getData/{id}.json', /*array('before' => 'sanitize', 'uses' => */'HomeController@showJson')/*)*/
 	->where(array('id'=>'[0-9]+'));
 
 Route::get('/knowme' , array('before' => 'sanitize', 'uses' => 'HomeController@showKnowMe'));
