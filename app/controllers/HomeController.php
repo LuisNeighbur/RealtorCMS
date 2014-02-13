@@ -61,8 +61,7 @@ class HomeController extends BaseController {
  		if ( $validation->fails() ){
  			$response = array(
  				'clase' => 'danger', 
- 				'texto' => 'You must complete all fields and place a valid email address.',
- 				'debug' => $validation->messages()->all()
+ 				'texto' => 'You must complete all fields and place a valid email address.'
  			);
  		}else{
  			Mail::send('mail', array('name'=>Input::get('name'),'email'=>Input::get('email'),'content'=>Input::get('content')), function($message){
