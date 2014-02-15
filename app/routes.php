@@ -38,6 +38,8 @@ Route::group(array('before' =>'noGuest'), function(){
 
 	Route::get('/admin/del', 'PanelController@showDel');
 
+	Route::get('/admin/edit', 'PanelController@showEdit');
+
 	Route::post('/admin/add', array('before' => 'sanitize', 'uses'=> 'PanelController@add'));
 
 	Route::post('/admin/del', array('before' => 'sanitize', 'uses'=> 'PanelController@delete'));
@@ -50,7 +52,7 @@ Route::group(array('before' =>'noGuest'), function(){
 });
 Route::get('/','HomeController@showWelcome');
 
-Route::get('/getData/{id}.json', /*array('before' => 'sanitize', 'uses' => */'HomeController@showJson')/*)*/
+Route::get('/getData/{id}.json', array('before' => 'sanitize', 'uses' => 'HomeController@showJson'))
 	->where(array('id'=>'[0-9]+'));
 
 Route::get('/knowme' , array('before' => 'sanitize', 'uses' => 'HomeController@showKnowMe'));

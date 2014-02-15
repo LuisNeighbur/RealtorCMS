@@ -3,27 +3,58 @@
 class Search extends Eloquent{
 	protected $table='places';
 	static public function SearchProperty($term){
-		if(preg_match('/([0-9]+)((\s)?|(\s)+)(cuarto(s)|dormitor(y|ies|io(s)?)|(bed(room|chamber)?)s?)/i', $term, $matches)){
-			//campo dormitorios LIKE %$buscar%
-			$arr = Place::where('dormitorios', 'like', '%'.$matches[1].'%');
-			return $arr->toArray();
+		$Search = array();
+		$patronBed ="/(([0-9]+)((\s)?|(\s)+)(cuarto(s)?|dormitor(y|ies|io(s)?)|(bed(room|chamber)?)(s)?)?((\s)?|(\s)+)(o(r)?)?((\s)?|(\s)+))*([0-9]+)((\s)?|(\s)+)(cuarto(s)?|dormitor(y|ies|io(s)?)|(bed(room|chamber)?)s?)/i";
+		$patronBath="/((([0-9])+)(\s)*(((half|full)?)(\s)*((ba(n|ñ)o|to(ilet|cador(e)?)|bath(room)?)s?)?)(\s)*(o(r)?)?(\s)*)*(([0-9])+)(\s)*((half|full)?)(\s)*((ba(n|ñ)o|to(ilet|cador(e)?)|bath(room)?)s?)/i";// echo our string
+		$patronPool="/((swimming((\s)?|(\s)+))?((pool)(s)?)|piscina(s)?|pileta(s)?)/i";
+		$result = array(
+		'bath' => null,
+		'bed' => null,
+		'pool' => false
+			);
 
-		}else if(preg_match("/(([0-9])+)((\s)?|(\s)+)((half)?)((\s)?|(\s)+)(baño|toilet|bath(room)?)s?/i", $term, $matches)){
-			//campo banios LIKE %$buscar%
-			$arr = Place::where('banios', 'like', '%'.$matches[1].'%');
-			return $arr->toArray();
-
-		}else if(preg_match("/((swimming((\s)?|(\s)+))?((pool)(s)?)|piscina(s)?|pileta(s)?)/i", $term, $matches)){
-			//buscar en campo piscina = "Yes"
-			$arr = Place::where('piscina', 'like', '%Yes%');
-			return $arr->toArray();
-
-		}else {
-			$arr = self::where('direccion', 'like', '%'.$term.'%')
-                    ->orWhere('area', 'like', '%'.$term.'%')
-                    ->orWhere('descripcion', 'like', '%'.$term.'%')
-                    ->orWhere('descripcionEs', 'like', '%'.$term.'%');
-			return $arr->toArray();
+		if (preg_match_all($patronBath,$term , $matches)){
+			$result['bath'] = self::GetIntFromStr($matches[0]);
+			$max = count($result['bath']);
+			$Search['data'] = Place::where('banios', 'like', "%{$result['bath'][0]}%")->get()->toArray();
 		}
+		if (preg_match_all($patronBed,$term , $matches)){
+			$result['bed'] = self::GetIntFromStr($matches[0]);
+			$max = count($result['bed']);
+			$Search['data'] = Place::where('dormitorios', 'like', "%{$result['bed'][0]}%")->get()->toArray();
+		}
+			$result['pool'] = preg_match($patronPool,$term) ? 'Yes' : 'No';
+			if(!$result['pool'])
+				$Search['data']  = Place::where('piscina', 'like', "%{$result['pool'][0]}%")->get()->toArray();
+		if( ($result['bed'] == null)  && ($result['pool'] == false) && ($result['bath'] == null) ){
+			$arr = self::where('direccion', 'like', "%{$term}%")
+                    ->orWhere('area', 'like', "%{$term}%")
+                    ->orWhere('descripcion', 'like', "%{$term}%")
+                    ->orWhere('descripcionEs', 'like', "%{$term}%")->get();
+			$Search['data'] = $arr->toArray();
+		}
+		return $Search;
+	}
+
+	static private function GetIntFromStr($data){
+		$arr = array();
+		$agroup = false;
+		$ac = "";
+		foreach ($data as $d){
+			for($i =0;$i<strlen($d);$i++){
+				$val = $d[$i];
+				if(is_numeric($val)){
+					if($agroup==false){ $agroup = true;	}
+					$ac = $ac . $val;
+				}else{
+					if($agroup==true){
+						$agroup=false;
+						$arr[]=$ac;
+					}
+					$ac="";
+				}
+			}
+		}
+		return $arr;
 	}
 }

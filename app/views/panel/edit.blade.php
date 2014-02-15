@@ -16,47 +16,47 @@
 		<h3 style="text-align:center;">INFORMATION</h3>
 	    <div>
 	        <label>Permanent Link - domain.com/whatyouput/PropertyWebId</label>
-	        <input type="text" class="form-control extract" id="permlink" value="" required>
+	        <input type="text" class="form-control extract" id="permLink" value="" required>
 	    </div>
   		<div>
   			<label>Description English</label>
-	        <textarea class="form-control extract" id="description" rows="5"></textarea>
+	        <textarea class="form-control extract" id="descripcion" rows="5"></textarea>
 	    </div>
 		<div>
 			<label>Description Spanish</label>
-	        <textarea class="form-control extract" id="descriptionEs" rows="5" placeholder="Write spanish description, please."></textarea>
+	        <textarea class="form-control extract" id="descripcionEs" rows="5" placeholder="Write spanish description, please."></textarea>
 	    </div>				
 		<div>
 			<label>City-Area</label>
-	        <input type="text" class="form-control extract" id="mrkt_area" value="" required />
+	        <input type="text" class="form-control extract" id="area" value="" required />
 	    </div>
 		<div>
 			<label>Address</label>
-	        <input type="text" class="form-control extract" id="address" value="" required />
+	        <input type="text" class="form-control extract" id="direccion" value="" required />
 	    </div>
 		<div>
 			<label>Price</label>
-	        <input type="text" class="form-control extract" id="price" value="" required />
+	        <input type="text" class="form-control extract" id="precio" value="" required />
 	       </div>
 		<div>
 			<label>Building SquareFeet</label>
-	          <input type="text" class="form-control extract" id="ft" value="" required="">
+	          <input type="text" class="form-control extract" id="dimensionesFeet" value="" required="">
 	    </div>
 	    <div>
 	    	<label>Building SquareMeter</label>
-	    	<input type="text" class="form-control extract" id="m2" value="" required />
+	    	<input type="text" class="form-control extract" id="dimensionesMeter" value="" required />
 	    </div>
 	    <div>
 	        <label>Build Year</label>
-	        <input type="text" class="form-control extract" id="year_built" value="" required="">
+	        <input type="text" class="form-control extract" id="contruida_anio" value="" required="">
 	    </div>
 	    <div>
 	        <label>Beedrooms</label>
-	        <input type="text" class="form-control extract" id="bedrooms" value="" required />
+	        <input type="text" class="form-control extract" id="dormitorios" value="" required />
 	    </div>
 	    <div>
 	        <label>Baths</label>
-	        <input type="text" class="form-control extract" id="baths" value="" required />
+	        <input type="text" class="form-control extract" id="banios" value="" required />
 	    </div>
 	    <div>
 	        <label>Garage</label>
@@ -64,27 +64,27 @@
 	    </div>
 	    <div>
 	       	<label>Swimming Pool</label>
-	        <input type="text" class="form-control extract" id="swimming_pool" value="" required="">
+	        <input type="text" class="form-control extract" id="piscina" value="" required="">
 	    </div>
 	    <div>
 	       	<label>School District</label>
-	        <input type="text" class="form-control extract" id="district" value="" required />
+	        <input type="text" class="form-control extract" id="distritoEscolar" value="" required />
 	    </div>
 	    <div>
 	        <label>Elementary School</label>
-	        <input type="text" class="form-control extract" id="elementaryl" value="" required />
+	        <input type="text" class="form-control extract" id="escuelaKinder" value="" required />
 	    </div>
 	    <div>
 	        <label>Middle School</label>
-	        <input type="text" class="form-control extract" id="middle" value="" required />
+	        <input type="text" class="form-control extract" id="escuelaPrimaria" value="" required />
 	    </div>
 	    <div>
 	       	<label>High School</label>
-	        <input type="text" class="form-control extract" id="high" value="" required />
+	        <input type="text" class="form-control extract" id="escuelaSecundaria" value="" required />
 	    </div>
 	    <div>
 	       	<label>HAR Reference Link</label>
-	        <input type="text" class="form-control extract" id="ref_url" value="" required />
+	        <input type="text" class="form-control extract" id="url_referencia" value="" required />
 	    </div>
 	    <div id='gallery'></div>
 	    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
@@ -93,22 +93,9 @@
   				<a id="cancel" class="btn btn-primary">Cancel</a>
   			</div>
   		</div>
-		<script>
-		$.ajax({
-			url: '/admin/edit',
-			type: 'post',
-			dataType: 'json',
-			timeout: 15000,
-			data: 'prop_url='
-		}).done(function(a){
-			
-		}).fail(function(){
-
-		});
-		</script>
 	</div>
 	<!--Este div corrije el error de flotacion de las imagenes en la galeria-->
 	<div class="clearfix"></div>
 </div>
-{{ HTML::script('/js/panel.add.js') }}
+{{ HTML::script('/js/panel.edit.js') }}
 @endsection

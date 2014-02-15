@@ -15,6 +15,7 @@
               		<ul class="nav navbar-nav">
 		                <li><a href="/admin/add"><span class="glyphicon glyphicon-plus-sign"></span> Agregar</a></li>
 		                <li><a href="/admin/del"><span class="glyphicon glyphicon-remove-sign"></span> Eliminar</a></li>
+                    <li><a href="/admin/edit"><span class="glyphicon glyphicon-pencil"></span> Editar</a></li>
 		            </ul>
 		            <form class="navbar-form navbar-left">
 					      	<div class="form-group">

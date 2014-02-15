@@ -25,6 +25,9 @@ class PanelController extends BaseController {
 	public function showDel(){
 		$this->layout->content = View::make('panel.del');
 	}
+	public function showEdit(){
+		$this->layout->content = View::make('panel.edit');
+	}
 	public function uploadImage(){
 		if(!Input::hasFile('myfile'))
 			return Response::json(array('status_code' => 403));

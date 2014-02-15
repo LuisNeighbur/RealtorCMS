@@ -111,7 +111,13 @@
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
-    
+    <script>
+    $('#buscar').on('keypress', function(e){
+    	if(e.which==13){
+    		window.location = '/search?q=' + encodeURI($(this).val());
+    	}
+    });
+    </script>
     {{ HTML::script('/js/bootstrap.min.js') }}
     {{-- HTML::script('/js/holder.js') --}}
 	{{ HTML::script('/js/logic.js') }}
