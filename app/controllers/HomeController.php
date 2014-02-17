@@ -61,7 +61,7 @@ class HomeController extends BaseController {
  		if ( $validation->fails() ){
  			$response = array(
  				'clase' => 'danger', 
- 				'texto' => 'You must complete all fields and place a valid email address.'
+ 				'texto' => Lang::get('messages.emailFail')
  			);
  		}else{
  			Mail::send('mail', array('name'=>Input::get('name'),'email'=>Input::get('email'),'content'=>Input::get('content')), function($message){
@@ -71,7 +71,7 @@ class HomeController extends BaseController {
    			});
  			$response = array(
  				'clase' => 'success', 
- 				'texto' => 'Your request were sent, you will hear shortly from Franco.'
+ 				'texto' => Lang::get('messages.emailSuccess')
  			);
  		}
  		return Response::json($response);

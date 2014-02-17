@@ -46,7 +46,7 @@ Route::group(array('before' =>'noGuest'), function(){
 
 	Route::post('/admin/edit', array('before' => 'sanitize', 'uses'=> 'PanelController@patch'));
 	//Esta ruta post es temporal
-	Route::post('/admin/collector', array('before' => 'sanitize', 'uses'=>' CollectorController@getProperty'));
+	Route::post('/admin/collector', array('before' => 'sanitize', 'uses'=>'CollectorController@getProperty'));
 
 	Route::post('/admin/upload', array('before' => 'sanitize', 'uses'=> 'PanelController@uploadImage'));
 });

@@ -93,10 +93,11 @@
   				<a id="cancel" class="btn btn-primary">Cancel</a>
   			</div>
   		</div>
-		<script src="/js/panel.add.on.js"></script>
+		
 	</div>
 	<!--Este div corrije el error de flotacion de las imagenes en la galeria-->
 	<div class="clearfix"></div>
 </div>
 {{ HTML::script('/js/panel.add.js') }}
+{{ HTML::script('/js/panel.add.on.js') }}
 @endsection

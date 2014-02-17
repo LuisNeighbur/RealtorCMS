@@ -1,7 +1,6 @@
 
 <?php
 class Search extends Eloquent{
-	protected $table='places';
 	static public function SearchProperty($term){
 		$Search = array();
 		$patronBed ="/(([0-9]+)((\s)?|(\s)+)(cuarto(s)?|dormitor(y|ies|io(s)?)|(bed(room|chamber)?)(s)?)?((\s)?|(\s)+)(o(r)?)?((\s)?|(\s)+))*([0-9]+)((\s)?|(\s)+)(cuarto(s)?|dormitor(y|ies|io(s)?)|(bed(room|chamber)?)s?)/i";
@@ -15,24 +14,25 @@ class Search extends Eloquent{
 
 		if (preg_match_all($patronBath,$term , $matches)){
 			$result['bath'] = self::GetIntFromStr($matches[0]);
-			$max = count($result['bath']);
 			$Search['data'] = Place::where('banios', 'like', "%{$result['bath'][0]}%")->get()->toArray();
 		}
 		if (preg_match_all($patronBed,$term , $matches)){
 			$result['bed'] = self::GetIntFromStr($matches[0]);
-			$max = count($result['bed']);
 			$Search['data'] = Place::where('dormitorios', 'like', "%{$result['bed'][0]}%")->get()->toArray();
 		}
-			$result['pool'] = preg_match($patronPool,$term) ? 'Yes' : 'No';
-			if(!$result['pool'])
-				$Search['data']  = Place::where('piscina', 'like', "%{$result['pool'][0]}%")->get()->toArray();
+		$result['pool'] = preg_match($patronPool,$term) ? 'Yes' : false;//'No';
+		if($result['pool']=='Yes'){
+			$Search['data']  = Place::where('piscina', 'like', "%{$result['pool'][0]}%")->get()->toArray();
+		}
+				
 		if( ($result['bed'] == null)  && ($result['pool'] == false) && ($result['bath'] == null) ){
-			$arr = self::where('direccion', 'like', "%{$term}%")
+			$arr = Place::where('direccion', 'like', "%{$term}%")
                     ->orWhere('area', 'like', "%{$term}%")
                     ->orWhere('descripcion', 'like', "%{$term}%")
                     ->orWhere('descripcionEs', 'like', "%{$term}%")->get();
 			$Search['data'] = $arr->toArray();
 		}
+
 		return $Search;
 	}
 

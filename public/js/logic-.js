@@ -39,22 +39,9 @@ function Loading(){
 	$('.spinner').css({ left: (($(window).width() - 40 )/2) ,top: ($(window).height() - 40)/2});
 }
 function GetTab(name){
+	$.get('/'+name,function(response){
 		Loading();
-		$('body').prepend('<div class="front">'+
-							'<div class="layer">'+
-								'<div class="close closeme" title="Esc">×</div>'+
-								'<div class="gtitle">'+tabs[name].title+'</div>'+
-								'<div class="row">'+
-									'<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">'+
-										'<div class="panel panel-success" style="margin-top:2%;">'+
-										tabs[name].body+	
-										'</div>'+
-									'</div>'+
-								'</div>'+
-							'</div>'+
-						'</div>'+
-						'<script src="/js/popup.js"></script>');
-		if(name=='contact'){$('body').prepend('<script src="/js/contact.js"></script>');}
+		$('body').prepend(response);
 		$('.container').css('display','none');
 		$('.front').slideToggle("slow", function(){ $('.spinner').remove();	});
 		if ((name=='support') && ($(window).width() < 676)){
@@ -62,6 +49,7 @@ function GetTab(name){
 		}else{
 			$('#gmap').css('display','block');
 		}
+	});
 }
 function openLayer(id){
 	Loading();
@@ -73,7 +61,7 @@ function openLayer(id){
 		htmll = htmll.replace('IMGTOP!', d.data.imgs[0].url);
 		Imgs = d.data.imgs;
 
-		var idioma = (tabs.lang == 'es')? 1: 0;
+		var idioma = (location.href.search('/es')>=0)? 1: 0;
 		var dataDesc = (idioma==0)? d.data.descripcion : d.data.descripcionEs;
 		var dataSuperficie =(idioma==0)? d.data.dimensionesFeet : d.data.dimensionesMeter;
 

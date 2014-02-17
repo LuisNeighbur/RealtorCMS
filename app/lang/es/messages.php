@@ -26,5 +26,8 @@ return array(
 	'elementary' => 'Escuela Primaria',
 	'middle' => 'Escuela Secundaria',
 	'high' => 'Escuela Terciaria (Bachillerato)',
-	'harLink' => 'HAR (Asociación de Agentes Inmobiliarios de Houston) link'
+	'harLink' => 'HAR (Asociación de Agentes Inmobiliarios de Houston) link',
+	'notFound' => 'Lo sentimos, no se han encontrado resultados',
+	'emailFail' => 'Debe completar todos los campo y colocar un correo valido.',
+	'emailSuccess' => 'Su mensaje fue enviado, Franco le contactara a la brevedad.'
 );

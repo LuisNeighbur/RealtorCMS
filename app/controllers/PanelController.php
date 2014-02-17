@@ -89,6 +89,39 @@ class PanelController extends BaseController {
 		return Response::json(array('status_code' => 200));
 	}
 	public function patch(){
-		
+		if(!Input::has('postData'))
+			return Response::json(array('status_code' => 400));
+		$ob = json_decode(Input::get('postData'));
+		$house = Place::find($ob->id);
+		if(count($house)<0)
+			return Response::json(array('status_code' => 404,$house));
+		$house->descripcion = $ob->descripcion;
+		$house->descripcionEs = $ob->descripcionEs;
+		$house->front_image = $ob->imgs->{0};
+		$house->direccion = $ob->direccion;
+		$house->dimensionesFeet = $ob->dimensionesFeet;
+		$house->dimensionesMeter = $ob->dimensionesMeter;
+		$house->area = $ob->area;
+		$house->dormitorios = $ob->dormitorios;
+		$house->banios = $ob->banios;
+		$house->garage = $ob->garage;
+		$house->contruida_anio = $ob->contruida_anio;
+		$house->piscina = $ob->piscina;
+		$house->distritoEscolar = $ob->distritoEscolar;
+		$house->escuelaKinder = $ob->escuelaKinder;
+		$house->escuelaPrimaria = $ob->escuelaPrimaria;
+		$house->escuelaSecundaria = $ob->escuelaSecundaria;
+		$house->url_referencia = $ob->url_referencia;
+		$house->precio = $ob->precio;
+		$house->permLink = $ob->permLink;
+		$house->save();
+		Image::where('place_id', '=', $house->id)->forceDelete();
+		foreach($ob->imgs as $url){
+			$article = Place::find($house->id);
+			$img = new Image;
+			$img->url = $url;
+			$article->images()->save($img);
+		}
+		return Response::json(array('status_code' => 200));
 	}
 }

@@ -291,3 +291,6 @@ a.twitter:active {
   
   z-index: 2;
 }
+img{
+  background-color: rgba(125,125,125,0.7) !important;
+}

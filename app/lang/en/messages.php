@@ -26,5 +26,8 @@ return array(
 	'elementary' => 'Elementary School',
 	'middle' => 'Middle School',
 	'high' => 'High School',
-	'harLink' => 'HAR (Houston Association of Realtors) link'
+	'harLink' => 'HAR (Houston Association of Realtors) link',
+	'notFound' => 'Sorry, no results found',
+	'emailFail' => 'You must complete all fields and place a valid email address.',
+	'emailSuccess' => 'Your request were sent, you will hear shortly from Franco.'
 );

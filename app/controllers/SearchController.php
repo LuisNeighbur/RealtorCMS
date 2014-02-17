@@ -6,7 +6,9 @@ class SearchController extends BaseController{
 		if(Input::has('q')){
 		$terms = Input::get('q');
 		$articles = Search::SearchProperty($terms);
-		$this->layout->content = View::make('layouts.search')->with('articles', $articles);//articleSearch
+		if(!$articles)
+			return View::make('layouts.search_none');
+		$this->layout->content = View::make('layouts.search')->with('articles', $articles);	
 		}else{
 			return Redirect::to('/');
 		}

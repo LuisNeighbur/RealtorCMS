@@ -78,7 +78,7 @@
       <div class="jumbotron">
 				
 		<blockquote style="background-color: rgba(0,0,0,0.45); clear: both; overflow: auto;">
-			<img class"img-top img-responsive" src="/images/top.png"/>
+			<img class"img-top img-responsive" style="background-color:transparent !important;" src="/images/top.png"/>
 			<p>"{{ Lang::get('messages.phrase')}} (281) 702-2985."</p>
 			<small><cite title="Franco R. Thoma"><span class="glyphicon glyphicon-user"></span> Franco R. Thoma</cite></small>
 		</blockquote>
@@ -120,6 +120,7 @@
     </script>
     {{ HTML::script('/js/bootstrap.min.js') }}
     {{-- HTML::script('/js/holder.js') --}}
+    {{HTML::script('/js/tabs.'.App::getLocale().'.js')}}
 	{{ HTML::script('/js/logic.js') }}
 </body>
 </html>

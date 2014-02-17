@@ -12,7 +12,6 @@
 	<button class="example btn btn-primary" data-href="http://franco.encom.uy/-nbsp-4033-university-blvd--west-university--tx-77005-/1">Ejemplo 2</button>
 	<div id="msjs"></div>
 	<div id="data"class="hide">
-		<div id="fileuploader">Subir</div>
 		<h3 style="text-align:center;">INFORMATION</h3>
 	    <div>
 	        <label>Permanent Link - domain.com/whatyouput/PropertyWebId</label>
@@ -89,7 +88,7 @@
 	    <div id='gallery'></div>
 	    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 text-center">
 			<div class="btn-group" style="margin-top:5px;">
-	        	<a id="saveIt" class="btn btn-success">Save Property</a>
+	        	<a id="saveIt" data-id="" class="btn btn-success">Save Property</a>
   				<a id="cancel" class="btn btn-primary">Cancel</a>
   			</div>
   		</div>

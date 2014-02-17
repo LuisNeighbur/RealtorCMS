@@ -1,5 +1,6 @@
 <?php
 class Place extends Eloquent {
+ 	public $timestamps = true;
 	public function images(){
 		return $this->hasMany('Image');
 	}
@@ -37,8 +38,8 @@ class Place extends Eloquent {
 	static public function getWithImages($id){
 		$return = array('status_code' => 200);
 		$n1 = Place::getProperty($id);
-		$n2 = Place::getImages($id);
-		if($n1 && $n2){
+		if($n1){
+			$n2 = Place::getImages($id);
 			$return['data'] = $n1->toArray();
 			$return['data']['descripcion_short'] = Str::words($n1['descripcion'], 30, '...');
 			$return['data']['descripcionEs_short'] = Str::words($n1['descripcionEs'], 30, '...');
