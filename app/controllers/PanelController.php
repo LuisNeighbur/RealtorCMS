@@ -28,6 +28,11 @@ class PanelController extends BaseController {
 	public function showEdit(){
 		$this->layout->content = View::make('panel.edit');
 	}
+
+	public function showNewUser(){
+		$this->layout->content = View::make('panel.newuser');
+	}
+
 	public function uploadImage(){
 		if(!Input::hasFile('myfile'))
 			return Response::json(array('status_code' => 403));
@@ -124,4 +129,31 @@ class PanelController extends BaseController {
 		}
 		return Response::json(array('status_code' => 200));
 	}
+	public function addUser(){
+		try {
+			$return = array('status_code' => 400);
+			$user_data = Input::all();
+			$rules = array(
+				'user' => 'required|min:6',
+				'pass' => 'required|alpha_num|min:6',
+				'repass' => 'required|alpha_num|min:6'
+			);
+			$validation = Validator::make($user_data,$rules);
+			if($validation->fails())
+				return Response::json($return);
+			if($user_data['pass'] !== $user_data['repass'])
+				return Response::json($return);
+			$newUser = new User;
+			$newUser->name = $user_data['user'];
+			$newUser->password = $user_data['pass'];
+			if(!$newUser->save())
+				return Response::json($return);
+			$return['status_code'] = 200;
+			return $return;
+		}catch(ErrorException $e){
+			$return['status_code'] = 500;
+			return Response::json($return);
+		}
+	}
+			
 }
