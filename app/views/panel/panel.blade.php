@@ -16,18 +16,28 @@
 		                <li><a href="/admin/add"><span class="glyphicon glyphicon-plus-sign"></span> Agregar</a></li>
 		                <li><a href="/admin/del"><span class="glyphicon glyphicon-remove-sign"></span> Eliminar</a></li>
                     <li><a href="/admin/edit"><span class="glyphicon glyphicon-pencil"></span> Editar</a></li>
+                    <li><a href="/admin/newUser"><span class="glyphicon glyphicon-user"></span> Nuevo</a></li>
 		            </ul>
-		            <form class="navbar-form navbar-left">
+		            <div class="navbar-form navbar-left">
 					      	<div class="form-group">
-					        	<input class="input-sm" type="text" class="form-control" placeholder="Buscar...">
+					        	<input id="txtSearch" class="input-sm" type="text" class="form-control" placeholder="Buscar...">
 					    	</div>
-					</form>
+					     </div>
 					<ul class="nav navbar-nav navbar-left">
 		               	<li><a href="/logout"><span class="glyphicon glyphicon-off"></span> Salir</a></li>
 						</ul>
             	</div>
   			</div>
     	</div> 
+      <script type="text/javascript">
+    
+      $('#txtSearch').on('keypress', function(e){
+        if((e.which==13)&&($(this).val()!='')){
+          window.location = '/search?q=' + encodeURI($(this).val());
+        }
+      });
+    
+      </script>
       @yield('panel')
   	</div>
 </div>

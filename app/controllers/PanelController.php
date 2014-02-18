@@ -145,7 +145,7 @@ class PanelController extends BaseController {
 				return Response::json($return);
 			$newUser = new User;
 			$newUser->name = $user_data['user'];
-			$newUser->password = $user_data['pass'];
+			$newUser->password = Hash::make($user_data['pass']);
 			if(!$newUser->save())
 				return Response::json($return);
 			$return['status_code'] = 200;

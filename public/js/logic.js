@@ -120,7 +120,10 @@ function openLayer(id){
   					                  '<a target="_blank" href="https://twitter.com/intent/tweet?text=House FOR SALE - '+d.data.direccion + '(' + d.data.area + ')&url='+ d.data.permLink +'/'+ d.data.id+'"class="btn twitter effect">[ t ]&nbsp;&nbsp;Tweet</a>'+
             						  '</div>');
 		$('body').prepend(htmll);
-		window.history.pushState(null,'', d.data.permLink + '/' + d.data.id);
+		var pageUrl = location.hostname;
+		var permlink = d.data.permLink;
+		if(pageUrl.indexOf('www')!=-1)
+			permlink = d.data.permLink.replace('texasusaagent.com','www.texasusaagent.com')
 		$('.container').css('display','none');
 		$('.front').slideToggle("slow", function(){ $('.spinner').remove();	});
 	});

@@ -40,6 +40,10 @@ Route::group(array('before' =>'noGuest'), function(){
 
 	Route::get('/admin/edit', 'PanelController@showEdit');
 
+	Route::get('/admin/newUser', 'PanelController@showNewUser');
+
+	Route::post('/admin/newUser', 'PanelController@addUser');
+
 	Route::post('/admin/add', array('before' => 'sanitize', 'uses'=> 'PanelController@add'));
 
 	Route::post('/admin/del', array('before' => 'sanitize', 'uses'=> 'PanelController@delete'));

@@ -8,7 +8,7 @@ $('.closeme').on("click",function(){
 	$('.container').css('display','block');
 	$('.front').fadeOut("slow",function(){
 		$(this).remove();
-		window.history.pushState(null,'', 'http://franco.encom.uy');
+		window.history.pushState(null,'', 'http://' + location.hostname);
 	});
 	window.location.hash = '';
 	$( "script" ).each(function(){

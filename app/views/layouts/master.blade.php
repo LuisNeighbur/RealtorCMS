@@ -113,7 +113,7 @@
     <!-- Placed at the end of the document so the pages load faster -->
     <script>
     $('#buscar').on('keypress', function(e){
-    	if(e.which==13){
+    	if((e.which==13) && ($(this).val()!='') ){
     		window.location = '/search?q=' + encodeURI($(this).val());
     	}
     });

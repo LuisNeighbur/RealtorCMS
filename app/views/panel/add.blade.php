@@ -8,6 +8,8 @@
 		<input type="text" id="har_url"class="form-control" placeholder="Example: http://search.har.com/engine/dispSearch.cfm?mlnum=2774470&v=s" required />
 	</div>
 	<button id="getData" type="button" class="btn btn-danger btn-sm" style="margin-top:5px;">Obtener Datos !</button>
+	<label>Incluir fotos desde har</label>
+	<input type="checkbox" id="har_img"  />
 	<button class="example btn btn-primary" data-href="http://search.har.com/engine/4033-University-Blvd-West-University-TX-77005_HAR97345281.htm">Ejemplo 1</button> 
 	<button class="example btn btn-primary" data-href="http://search.har.com/engine/dispSearch.cfm?mlnum=2774470&v=s">Ejemplo 2</button>
 	<div id="msjs"></div>

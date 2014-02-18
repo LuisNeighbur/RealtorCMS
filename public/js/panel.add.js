@@ -25,7 +25,7 @@ $('#getData').on('click', function(){
 		type: 'post',
 		dataType: 'json',
 		timeout: 15000,
-		data: 'har_url=' + url.val()
+		data: 'har_url=' + url.val() + '&har_img=' + $('#har_img').prop('checked')
 	}).done(function(a){
 		data.removeClass('loading')
 		$('#gallery').empty()

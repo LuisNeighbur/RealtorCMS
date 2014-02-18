@@ -13,7 +13,7 @@ class CollectorController extends BaseController{
 		$gen = 2;
 		$url = Input::all();
 		$rules = array(
-			'har_url'=>'required|url',
+			'har_url'=>'required|url'
  		);
  		$validation = Validator::make($url, $rules);
 		if($validation->fails()) 
@@ -98,21 +98,19 @@ class CollectorController extends BaseController{
 			}		
 			
 				//Private Pool: 
-			
-			foreach($asd->find('div[class=slider_item]')as $g){
-				$tmp_gallery = array();
-				if($g->find('img',0)){
-					$tmp_gallery['url'] = $g->find('img',0)->src;
-					//if($g->find('span',0))
-						//$tmp_gallery['description'] =  $g->find('span',0)->plaintext;
-					$property['data']['gallery'][] = $tmp_gallery;
-				}else{
-					$tmp_gallery['url'] = $g->find('a',0)->href;
-					//if($g->find('span',0))
-						//$tmp_gallery['description'] =  $g->find('span',0)->plaintext;
-					$property['data']['gallery'][] = $tmp_gallery;
+			if(Input::has('har_img') && Input::get('har_img')=='true'){
+				foreach($asd->find('div[class=slider_item]')as $g){
+					$tmp_gallery = array();
+					if($g->find('img',0)){
+						$tmp_gallery['url'] = $g->find('img',0)->src;
+						$property['data']['gallery'][] = $tmp_gallery;
+					}else{
+						$tmp_gallery['url'] = $g->find('a',0)->href;
+						$property['data']['gallery'][] = $tmp_gallery;
+					}
 				}
 			}
+			
 		}catch(ErrorException $e){
 				return Response::json(array('status_code' => 400));
 		}
