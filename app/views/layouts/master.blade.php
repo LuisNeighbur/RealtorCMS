@@ -11,7 +11,7 @@
 	<link rel="apple-touch-icon" sizes="72x72" href="/images/apple-touch-icon-72x72.png">
 	<link rel="apple-touch-icon" sizes="114x114" href="/images/apple-touch-icon-114x114.png">
 
-    <title>Texas USA Agent - Franco R. Thoma</title>
+    <title>Realtor CMS</title>
 
     <!-- Bootstrap core CSS -->
    	<link  rel="stylesheet" href="/css/bootstrap.skin.min.css">
@@ -34,7 +34,7 @@
          <!-- <div id ="workfor" class="ribbon text-center"  data-container="body" data-toggle="popover" data-placement="bottom" data-content="Some data about the company you work for !" title="Company Name (click to see more)"><strong>I work for...</strong></div>-->
 	  
 	   <div class="row marketing">
-		<h1><span class="glyphicon glyphicon-home"></span> TEXAS USA AGENT <small>- Franco R. Thoma</small>
+		<h1><span class="glyphicon glyphicon-home"></span> Realtor CMS
 	    
 		<div class="btn-group pull-right">
 		  <a href="/en" type="button" class="btn btn-primary">English</a>
@@ -99,8 +99,8 @@
       <div class="footer">
         <p>Web site made by <a href="http://iglove.com.uy" target="_blank">Luciano Thoma</a> &amp; <a href="http://www.encom.uy" target="_blank">Luis Neighbur</a> (Powered by <a class="patners" href="http://laravel.com/" target="_blank">Laravel</a>-<a class="patners" href="http://getbootstrap.com" target="_blank">Bootstrap</a>)
         <span class="pull-right">
-        	<a href="https://www.facebook.com/TexasUsaAgent" target="_blank"><img class="img-rounded img-responsive pull-left social" src="/images/glyphicons_social_30_facebook.png"></a>
-        	<a href="https://www.linkedin.com/pub/franco-r-thoma/8a/408/aa4" target="_blank"><img class="img-rounded img-responsive pull-left social" src="/images/glyphicons_social_17_linked_in.png"></a>
+        	<a href="https://www.facebook.com/#" target="_blank"><img class="img-rounded img-responsive pull-left social" src="/images/glyphicons_social_30_facebook.png"></a>
+        	<a href="https://www.linkedin.com/#" target="_blank"><img class="img-rounded img-responsive pull-left social" src="/images/glyphicons_social_17_linked_in.png"></a>
         </span>
         </p>
       </div>
